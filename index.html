@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>DOM Events</title>
+
+    <link
+      href="https://fonts.googleapis.com/css2?family=Caveat:wght@400;700&family=Space+Mono:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
+  <body>
+   
+
+    <header>
+      <h1>DOM Event Playground 🎯</h1>
+      <div class="event-counter"><span id="count-event">0</span> Events</div>
+    </header>
+    <div class="container">
+      <main>
+        <div class="section-card">
+          <h3>
+            🖱️ Click Events<span class="span"
+              >click / dblclick / contextmenu</span
+            >
+          </h3>
+          <div class="click-box">
+            <button class="btn btn-red" id="btn-click">Click</button>
+            <button    class="btn btn-yellow" id="btn-dblClick">
+              Double Click
+            </button>
+            <button class="btn btn-green" id="btn-rightClick">
+              Right Click
+            </button>
+          </div>
+          <div id="down-info">Toplam Tıklama: <span id="count">0</span></div>
+        </div>
+        <div class="section-card">
+          <h3>
+            ⌨️ Keyboard Events
+            <span class="span">keydown / keyup / focus / blur</span>
+          </h3>
+          <input type="text" id="keyboard-input" placeholder="Write here" />
+          <div id="keyboard-info">Bir tuşa bas.</div>
+        </div>
+        <div class="section-card">
+          <h3>
+            🌊 Mouse Events
+            <span class="span"
+              >mousemove / mouseenter / mouseleave / click</span
+            >
+          </h3>
+          <div class="mouse-box">
+            <p>Move your mouse or click it.</p>
+          </div>
+          <div id="mouse-coords">x:<span id="coord-x">0 </span> y:<span id="coord-y"></span>0</div>
+        </div>
+        <div class="section-card">
+          <h3>
+            📋 Form Events
+            <span class="span">change / input / focus / blur</span>
+          </h3>
+          <label for="colors">Renk Seç(change)</label>
+          <select name="colors" id="colors">
+            <option value="">--select</option>
+            <option value="red">Kırmızı</option>
+            <option value="blue">Mavi</option>
+            <option value="green">Yeşil</option>
+            <option value="yellow">Sarı</option>
+          </select>
+          <label for="range">Hız: <span id="range-span">50</span></label>
+          <input type="range" id="speed-range" min="0" max="100" value="50" />
+          <div id="checkbox"><input type="checkbox" /> yes,change it!</div>
+        </div>
+        <div class="section-card">
+          <h3>
+            🃏 Drag & Drop
+            <span class="span">dragstart / dragover / drop / dragend</span>
+          </h3>
+          <div class="drag-area">
+            <div class="drag-zone" id="zone-a">
+              <h4>Kutu A</h4>
+              <div class="drag-item" draggable="true" id="card-1">🍎 Elma</div>
+              <div class="drag-item" draggable="true" id="card-2">🍋 Limon</div>
+              <div class="drag-item" draggable="true" id="card-3">🍇 Üzüm</div>
+            </div>
+            <div class="drag-zone" id="zone-b">
+              <h4>Kutu B</h4>
+            </div>
+            <div class="drag-zone" id="zone-c">
+              <h4>Kutu C</h4>
+            </div>
+          </div>
+        </div>
+        <div class="section-card">
+          <h3>📜 Scroll Event <span class="span">scroll</span></h3>
+          <div id="scroll">
+            <p>Kaydır ve scroll eventini izle 🔽</p>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+            <p>Quisquam, voluptatem. Quisquam, voluptatem consectetur.</p>
+            <p>Daha fazla içerik... kaydırmaya devam et.</p>
+            <p>Scroll pozisyonu log panelinde güncelleniyor.</p>
+            <p>Son satır. Buraya ulaştın! 🎉</p>
+          </div>
+          <p>Scroll: <span class="scroll-span">0</span>px</p>
+        </div>
+      </main>
+
+      <aside id="log-panel">
+        <h2>📡 Event Günlüğü</h2>
+        <div id="log-list"></div>
+        <button id="clear-log">🗑 Günlüğü Temizle</button>
+      </aside>
+    </div>
+    <script src="./JS/dom-olaylar.js"></script>
+  </body>
+</html>
