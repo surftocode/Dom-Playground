@@ -184,8 +184,8 @@ function dropped(e) {
   const id = e.dataTransfer.getData("text/plain");
   const element = document.getElementById(id);
   e.currentTarget.appendChild(element);
-  const item=document.createElement("div");
-  item.textContent="yayyy!You drop and drag it";
+  const item = document.createElement("div");
+  item.textContent = "yayyy!You drop and drag it";
   logList.prepend(item);
 }
 
@@ -199,3 +199,18 @@ dragZones.forEach((dragZone) => {
 dragZones.forEach((dragZone) => {
   dragZone.addEventListener("drop", dropped);
 });
+
+let scroll = document.getElementById("scroll");
+let scrollSpan = document.querySelector(".scroll-span");
+
+function scrollElem(e) {
+  events++;
+  eventCounter.innerHTML = events;
+  scrollSpan.innerHTML = e.target.scrollTop;
+  const item = document.createElement("div");
+  item.textContent = `${e.target.scrollTop}px kadar kaydırıldı!`;
+  logList.prepend(item);
+  console.log(e.target)
+}
+
+scroll.addEventListener("scroll", scrollElem);
