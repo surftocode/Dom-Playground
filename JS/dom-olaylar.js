@@ -210,7 +210,16 @@ function scrollElem(e) {
   const item = document.createElement("div");
   item.textContent = `${e.target.scrollTop}px kadar kaydırıldı!`;
   logList.prepend(item);
-  console.log(e.target)
 }
 
 scroll.addEventListener("scroll", scrollElem);
+
+let clearLog=document.getElementById("clear-log");
+
+
+clearLog.addEventListener("click",(e)=>{
+  logList.innerHTML="";
+  eventCounter.innerHTML=0;
+  
+
+})
